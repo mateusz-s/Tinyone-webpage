@@ -165,23 +165,24 @@ a {
 	z-index: 999;
 	.page-nav {
 		position: relative;
+		&:hover .menu {
+			display: block;
+		}
 	}
 	.hamburger-btn {
 		font-size: 2.2rem;
-		&:focus + .menu {
-			display: block;
-			position: absolute;
-		}
+//		&:focus + .menu {
+//			display: block;
+//		}
 		.close-icon {
 			display: none;
 		}
 	}
 	.menu {
 		display: none;
-//		position: absolute;
-		padding: 0;
+		position: absolute;
+		padding: 20px 0 0;
 		margin: 0;
-		margin-top: 20px;
 		list-style-type: none;
 	}
 	.page-nav, .social-media {
@@ -216,7 +217,9 @@ a {
 		margin: 0 0 33px;
 	}
 	&-lead {
-		margin: 0 320px 45px;
+		max-width: 530px;
+		margin: 0 auto 45px;
+//		margin: 0 320px 45px;
 	}
 	&-btn {
 		padding: 18px 73px;
@@ -236,9 +239,17 @@ a {
 
 /* === FEATURES SECTION STYLES === */
 .features {
+	padding: 100px 0;
 	&-title,
 	&-lead {
 		text-align: center;
+	}
+	&-title {
+		margin-top: 0;
+	}
+	&-lead {
+		max-width: 750px;
+		margin: 0 auto 73px;
 	}
 	&-item {
 		padding-left: 100px;
@@ -246,13 +257,29 @@ a {
 		&::before {
 			position: absolute;
 			top: 0;
-			left: 20px;
+			left: 50px;
+			transform: translate(-50%,0);
 			font: 5rem 'FontAwesome';
 		}
 	}
 }
 
-/* ===  === */
+/* === PRICING SECTION STYLES === */
+.pricing {
+	padding: 100px 0;
+	&-title,
+	&-lead {
+		text-align: center;
+	}
+	&-title {
+		text-transform: capitalize;
+	}
+	&-lead {
+		max-width: 750px;
+		margin: 0 auto;
+	}
+}
+
 /* ===  === */
 /* ===  === */
 /* ===  === */

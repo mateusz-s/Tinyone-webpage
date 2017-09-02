@@ -191,21 +191,20 @@ a {
 .page-header .page-nav {
   position: relative;
 }
+.page-header .page-nav:hover .menu {
+  display: block;
+}
 .page-header .hamburger-btn {
   font-size: 2.2rem;
-}
-.page-header .hamburger-btn:focus + .menu {
-  display: block;
-  position: absolute;
 }
 .page-header .hamburger-btn .close-icon {
   display: none;
 }
 .page-header .menu {
   display: none;
-  padding: 0;
+  position: absolute;
+  padding: 20px 0 0;
   margin: 0;
-  margin-top: 20px;
   list-style-type: none;
 }
 .page-header .page-nav,
@@ -253,7 +252,8 @@ a {
   margin: 0 0 33px;
 }
 .hero-lead {
-  margin: 0 320px 45px;
+  max-width: 530px;
+  margin: 0 auto 45px;
 }
 .hero-btn {
   padding: 18px 73px;
@@ -270,9 +270,19 @@ a {
   font-size: 3.2rem;
 }
 /* === FEATURES SECTION STYLES === */
+.features {
+  padding: 100px 0;
+}
 .features-title,
 .features-lead {
   text-align: center;
+}
+.features-title {
+  margin-top: 0;
+}
+.features-lead {
+  max-width: 750px;
+  margin: 0 auto 73px;
 }
 .features-item {
   padding-left: 100px;
@@ -281,10 +291,26 @@ a {
 .features-item::before {
   position: absolute;
   top: 0;
-  left: 20px;
+  left: 50px;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
   font: 5rem 'FontAwesome';
 }
-/* ===  === */
+/* === PRICING SECTION STYLES === */
+.pricing {
+  padding: 100px 0;
+}
+.pricing-title,
+.pricing-lead {
+  text-align: center;
+}
+.pricing-title {
+  text-transform: capitalize;
+}
+.pricing-lead {
+  max-width: 750px;
+  margin: 0 auto;
+}
 /* ===  === */
 /* ===  === */
 /* ===  === */
