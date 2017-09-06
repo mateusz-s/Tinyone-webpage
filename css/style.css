@@ -10,6 +10,9 @@ body {
   margin: 0;
   font: 2rem/2.4rem 'Source Sans Pro', sans-serif;
 }
+section:not(.hero) {
+  padding: 100px 0;
+}
 h1 {
   font-size: 4.8rem;
 }
@@ -38,7 +41,7 @@ button {
 }
 a {
   text-decoration: none;
-  color: #000000;
+  color: #010101;
 }
 /* === ADDITIONAL STYLES === */
 .social-media {
@@ -52,6 +55,16 @@ a {
 }
 .social-media li + li {
   margin-left: 20px;
+}
+.btn {
+  display: inline-block;
+  width: 140px;
+  height: 47px;
+  border: 2px solid #000000;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 4.7rem;
+  text-transform: uppercase;
 }
 .tablet::before {
   content: '\f10a';
@@ -70,6 +83,12 @@ a {
 }
 .bookmark::before {
   content: '\f097';
+}
+.laptop::before {
+  content: '\f109';
+}
+.desktop::before {
+  content: '\f108';
 }
 /* === GRID SYSTEM STYLES === */
 .container {
@@ -252,17 +271,14 @@ a {
   margin: 0 0 33px;
 }
 .hero-lead {
-  max-width: 530px;
-  margin: 0 auto 45px;
+  padding: 0 27.08333%;
+  margin-bottom: 45px;
 }
-.hero-btn {
-  padding: 18px 73px;
-  border: 2px solid #000000;
+.hero .btn {
+  width: 256px;
+  height: 56px;
   font-size: 2.2rem;
-  font-weight: 700;
-  line-height: 2.4rem;
-  text-transform: uppercase;
-  color: #010101;
+  line-height: 5.6rem;
 }
 .hero .scroll-down {
   position: absolute;
@@ -270,9 +286,6 @@ a {
   font-size: 3.2rem;
 }
 /* === FEATURES SECTION STYLES === */
-.features {
-  padding: 100px 0;
-}
 .features-title,
 .features-lead {
   text-align: center;
@@ -281,8 +294,8 @@ a {
   margin-top: 0;
 }
 .features-lead {
-  max-width: 750px;
-  margin: 0 auto 73px;
+  padding: 0 18.33333%;
+  margin-bottom: 73px;
 }
 .features-item {
   padding-left: 100px;
@@ -298,20 +311,78 @@ a {
 }
 /* === PRICING SECTION STYLES === */
 .pricing {
-  padding: 100px 0;
-}
-.pricing-title,
-.pricing-lead {
   text-align: center;
 }
 .pricing-title {
   text-transform: capitalize;
 }
 .pricing-lead {
-  max-width: 750px;
-  margin: 0 auto;
+  padding: 0 18.33333%;
+  margin-bottom: 95px;
 }
+.pricing-item::before {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  font: 4.8rem 'FontAwesome';
+  line-height: 100px;
+  color: #010101;
+  background-color: #ebebeb;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+.pricing-item:hover::before {
+  color: #ffffff;
+  background-color: #010101;
+}
+.pricing-item-title {
+  font-size: 2.4rem;
+}
+.pricing-item-lead {
+  padding: 0 26.31579%;
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+}
+.pricing-item-price {
+  margin-bottom: 75px;
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 4.8rem;
+  text-transform: uppercase;
+  color: #010101;
+  position: relative;
+}
+.pricing-item-price::before,
+.pricing-item-price::after {
+  margin: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+.pricing-item-price::before {
+  content: '';
+  top: 100%;
+  width: 50px;
+  border-bottom: 2px solid;
+}
+.pricing-item-price::after {
+  content: attr(data-price);
+  top: calc(110%);
+  font-size: 1.6rem;
+  font-weight: 400;
+  text-transform: none;
+  color: #898989;
+}
+/* === WORKS SECTION STYLES === */
+.works {
+  text-align: center;
+}
+.works-lead {
+  padding: 0 18.33333%;
+}
+/* === TEAM SECTION STYLES === */
 /* ===  === */
 /* ===  === */
 /* ===  === */
-/* ===  === */
+/* === MEDIA QUERIES === */

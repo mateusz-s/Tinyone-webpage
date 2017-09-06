@@ -8,9 +8,13 @@
 @bold: 700;
 
 //Colors
+@text-color-white: #FFFFFF;
 @text-color-black-1: #010101;
 @text-color-black-2: #222222;
 @text-color-gray-1: #898989;
+
+@bg-color-black-1: #010101;
+@bg-color-gray-2: #EBEBEB;
 
 //Other variables
 //@features: tablet, lemon, folder, code, envelope, bookmark;
@@ -47,6 +51,10 @@ body {
 	font: 2rem/2.4rem 'Source Sans Pro', sans-serif;
 }
 
+section:not(.hero) {
+	padding: 100px 0;
+}
+
 h1 {
 	font-size: 4.8rem;
 }
@@ -79,7 +87,7 @@ button {
 
 a {
 	text-decoration: none;
-	color: #000000;
+	color: @text-color-black-1;
 }
 
 /* === ADDITIONAL STYLES === */
@@ -94,6 +102,17 @@ a {
 			margin-left: 20px;
 		}
 	}
+}
+
+.btn {
+	display: inline-block;
+	width: 140px;
+	height: 47px;
+	border: 2px solid #000000;
+	font-size: 1.6rem; 
+	font-weight: @bold;
+	line-height: 4.7rem; // 2.4rem;
+	text-transform: uppercase;
 }
 
 .tablet::before {
@@ -118,6 +137,14 @@ a {
 
 .bookmark::before {
 	content: '\f097';
+}
+
+.laptop::before {
+	content: '\f109';
+}
+
+.desktop::before {
+	content: '\f108';
 }
 
 /* === GRID SYSTEM STYLES === */
@@ -217,18 +244,14 @@ a {
 		margin: 0 0 33px;
 	}
 	&-lead {
-		max-width: 530px;
-		margin: 0 auto 45px;
-//		margin: 0 320px 45px;
+		padding: 0 27.08333%;
+		margin-bottom: 45px;
 	}
-	&-btn {
-		padding: 18px 73px;
-		border: 2px solid #000000;
+	.btn {
+		width: 256px;
+		height: 56px;
 		font-size: 2.2rem;
-		font-weight: @bold;
-		line-height: 2.4rem;
-		text-transform: uppercase;
-		color: @text-color-black-1;
+		line-height: 5.6rem;
 	}
 	.scroll-down {
 		position: absolute;
@@ -239,7 +262,6 @@ a {
 
 /* === FEATURES SECTION STYLES === */
 .features {
-	padding: 100px 0;
 	&-title,
 	&-lead {
 		text-align: center;
@@ -248,8 +270,8 @@ a {
 		margin-top: 0;
 	}
 	&-lead {
-		max-width: 750px;
-		margin: 0 auto 73px;
+		padding: 0 18.33333%;
+		margin-bottom: 73px;
 	}
 	&-item {
 		padding-left: 100px;
@@ -266,21 +288,80 @@ a {
 
 /* === PRICING SECTION STYLES === */
 .pricing {
-	padding: 100px 0;
-	&-title,
-	&-lead {
-		text-align: center;
-	}
+	text-align: center;
 	&-title {
 		text-transform: capitalize;
 	}
 	&-lead {
-		max-width: 750px;
-		margin: 0 auto;
+		padding: 0 18.33333%;
+		margin-bottom: 95px;
+	}
+	&-item {
+		&::before {
+			display: inline-block;
+			width: 100px;
+			height: 100px;
+			border-radius: 50%;
+			font: 4.8rem 'FontAwesome';
+			line-height: 100px;
+			color: @text-color-black-1;
+			background-color: @bg-color-gray-2;
+			transition: all .3s;
+		}
+		&:hover::before {
+			color: @text-color-white;
+			background-color: @bg-color-black-1;
+		}
+		&-title {
+			font-size: 2.4rem;
+		}
+		&-lead {
+			padding: 0 26.31579%;
+			font-size: 1.4rem;
+			line-height: 2.4rem;
+		}
+		&-price	{
+			margin-bottom: 75px;
+			font-size: 3.2rem;
+			font-weight: @bold;
+			line-height: 4.8rem;
+			text-transform: uppercase;
+			color: @text-color-black-1;
+			position: relative;
+			&::before,
+			&::after {
+				margin: auto;
+				position: absolute;
+				left: 0;
+				right: 0;
+			}
+			&::before {
+				content: '';
+				top: 100%;
+				width: 50px;
+				border-bottom: 2px solid;
+			}
+			&::after {
+				content: attr(data-price);
+				top: calc(100% + 10px);
+				font-size: 1.6rem;
+				font-weight: @regular;
+				text-transform: none;
+				color: @text-color-gray-1;
+			}
+		}
 	}
 }
 
+/* === WORKS SECTION STYLES === */
+.works {
+	text-align: center;
+	&-lead {
+		padding: 0 18.33333%;
+	}
+}
+/* === TEAM SECTION STYLES === */
 /* ===  === */
 /* ===  === */
 /* ===  === */
-/* ===  === */
+/* === MEDIA QUERIES === */
