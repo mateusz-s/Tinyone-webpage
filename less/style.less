@@ -3,6 +3,16 @@
 @max-col-width: 100%;
 @min-col-width: @max-col-width / @grid-columns;
 
+@break-sm: 576px;
+@break-md: 768px;
+@break-lg: 992px;
+@break-xl: 1200px;
+
+@sm: ~'screen and (min-width: 576px)';
+@md: ~'screen and (min-width: 768px)';
+@lg: ~'screen and (min-width: 992px)';
+@xl: ~'screen and (min-width: 1200px)';
+
 //Font weight
 @regular: 400;
 @bold: 700;
@@ -360,8 +370,28 @@ a {
 		padding: 0 18.33333%;
 	}
 }
+
 /* === TEAM SECTION STYLES === */
+
+
 /* ===  === */
 /* ===  === */
 /* ===  === */
+
+
 /* === MEDIA QUERIES === */
+@media @sm {
+	.grid-system(sm);
+}
+
+@media @md {
+	.grid-system(md);
+}
+
+@media @lg {
+	.grid-system(lg);
+}
+
+@media @xl {
+	.grid-system(xl);
+}
