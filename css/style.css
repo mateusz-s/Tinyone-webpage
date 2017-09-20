@@ -118,9 +118,6 @@ img {
   padding: 0 15px;
   margin: 0 auto;
 }
-.row {
-  margin: 0 -15px;
-}
 .row::before,
 .row::after {
   content: '';
@@ -314,16 +311,36 @@ img {
   margin-bottom: 73px;
 }
 .features-item {
-  padding-left: 100px;
+  padding-left: 115px;
+  margin-bottom: 93px;
   position: relative;
+}
+.features-item:last-child {
+  margin: 0;
+}
+@media screen and (min-width: 768px) {
+  .features-item:nth-child(n + 5) {
+    margin: 0;
+  }
+}
+@media screen and (min-width: 992px) {
+  .features-item:nth-child(n + 4) {
+    margin: 0;
+  }
 }
 .features-item::before {
   position: absolute;
   top: 0;
-  left: 50px;
+  left: 65px;
   -webkit-transform: translate(-50%, 0);
           transform: translate(-50%, 0);
   font: 5rem 'FontAwesome';
+}
+.features-item-title {
+  margin-top: 0;
+}
+.features-item-lead {
+  margin-bottom: 0;
 }
 /* === PRICING SECTION STYLES === */
 .pricing {
@@ -335,6 +352,17 @@ img {
 .pricing-lead {
   padding: 0 18.33333%;
   margin-bottom: 95px;
+}
+.pricing-item {
+  margin-bottom: 93px;
+}
+.pricing-item:last-child {
+  margin: 0;
+}
+@media screen and (min-width: 768px) {
+  .pricing-item {
+    margin: 0;
+  }
 }
 .pricing-item::before {
   display: inline-block;
@@ -455,16 +483,67 @@ img {
   content: '\f017';
   margin-left: 5px;
 }
+.works-item {
+  margin-bottom: 68px;
+}
+.works-item:last-child {
+  margin: 0;
+}
+@media screen and (min-width: 576px) {
+  .works-item:nth-child(n + 7) {
+    margin: 0;
+  }
+}
+@media screen and (min-width: 992px) {
+  .works-item:nth-child(n + 5) {
+    margin: 0;
+  }
+}
 .works-item-title {
-  line-height: 2.4rem;
   margin-bottom: 0;
+  line-height: 2.4rem;
+  text-transform: capitalize;
 }
 .works-item-lead {
+  margin: 0;
+  margin-top: 5px;
   font-size: 1.6rem;
   line-height: 2rem;
-  margin-top: 5px;
 }
 /* === TEAM SECTION STYLES === */
+.team {
+  text-align: center;
+}
+.team-lead {
+  padding: 0 18.33333%;
+  margin-bottom: 73px;
+}
+.team-item {
+  margin-bottom: 93px;
+}
+.team-item:last-child {
+  margin: 0;
+}
+@media screen and (min-width: 768px) {
+  .team-item:nth-child(n + 3) {
+    margin: 0;
+  }
+}
+@media screen and (min-width: 992px) {
+  .team-item {
+    margin: 0;
+  }
+}
+.team-item-photo {
+  border-radius: 50%;
+}
+.team .social-media {
+  font-size: 1.6rem;
+  line-height: 1.8rem;
+}
+.team .social-media li + li {
+  margin-left: 10px;
+}
 /* ===  === */
 /* ===  === */
 /* ===  === */

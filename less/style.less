@@ -197,7 +197,7 @@ img {
 }
 
 .row {
-	margin: 0 -15px;
+//	margin: 0 -15px;
 	&::before,
 	&::after {
 		content: '';
@@ -309,14 +309,34 @@ img {
 		margin-bottom: 73px;
 	}
 	&-item {
-		padding-left: 100px;
+		padding-left: 115px;
+		margin-bottom: 93px;
 		position: relative;
+		&:last-child {
+			margin: 0;
+		}
+		@media @md {
+			&:nth-child(n + 5) {
+				margin: 0;
+			}
+		}
+		@media @lg {
+			&:nth-child(n + 4) {
+				margin: 0;
+			}
+		}
 		&::before {
 			position: absolute;
 			top: 0;
-			left: 50px;
+			left: 65px;
 			transform: translate(-50%,0);
 			font: 5rem @secondary-font-family;
+		}
+		&-title {
+			margin-top: 0;
+		}
+		&-lead {
+			margin-bottom: 0;
 		}
 	}
 }
@@ -332,6 +352,13 @@ img {
 		margin-bottom: 95px;
 	}
 	&-item {
+		margin-bottom: 93px;
+		&:last-child {
+			margin: 0;
+		}
+		@media @md {
+			margin: 0;
+		}
 		&::before {
 			display: inline-block;
 			width: 100px;
@@ -443,20 +470,66 @@ img {
 		margin-left: 5px;
 	}
 	&-item {
+		margin-bottom: 68px;
+		&:last-child {
+			margin: 0;
+		}
+		@media @sm {
+			&:nth-child(n + 7) {
+				margin: 0;
+			}
+		}
+		@media @lg {
+			&:nth-child(n + 5) {
+				margin: 0;
+			}
+		}
 		&-title {
-			line-height: 2.4rem;
 			margin-bottom: 0;
+			line-height: 2.4rem;
+			text-transform: capitalize;
 		}
 		&-lead {
+			margin: 0;
+			margin-top: 5px;
 			font-size: 1.6rem;
 			line-height: 2rem;
-			margin-top: 5px;
 		}
 	}
 }
 
 /* === TEAM SECTION STYLES === */
-
+.team {
+	text-align: center;
+	&-lead {
+		padding: 0 18.33333%;
+		margin-bottom: 73px;
+	}
+	&-item {
+		margin-bottom: 93px;
+		&:last-child {
+			margin: 0;
+		}
+		@media @md {
+			&:nth-child(n + 3) {
+				margin: 0;
+			}
+		}
+		@media @lg {
+			margin: 0;
+		}
+		&-photo {
+			border-radius: 50%;
+		}
+	}
+	.social-media {
+		font-size: 1.6rem;
+		line-height: 1.8rem;
+		li + li {
+			margin-left: 10px;
+		}
+	}
+}
 
 /* ===  === */
 /* ===  === */
