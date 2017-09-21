@@ -25,11 +25,14 @@
 @text-color-white: #FFFFFF;
 @text-color-black-1: #010101;
 @text-color-black-2: #222222;
+@text-color-black-3: #2D2D2D;
 @text-color-gray-1: #898989;
+@text-color-deep-blue: #313841;
 
 @bg-color-black-1: #010101;
 @bg-color-black-2: #222222;
 @bg-color-gray-2: #EBEBEB;
+@bg-color-yellow: #FCDB00;
 
 //Other variables
 //@features: tablet, lemon, folder, code, envelope, bookmark;
@@ -72,10 +75,12 @@ section:not(.hero) {
 
 h1 {
 	font-size: 4.8rem;
+	line-height: 4.8rem
 }
 
 h2 {
 	font-size: 3.2rem;
+	line-height: 3.2rem;
 }
 
 h3 {
@@ -88,8 +93,6 @@ h1, h2, h3 {
 }
 
 p {
-//	font-size: 2rem;
-//	line-height: 2.4rem;
 	color: @text-color-gray-1;
 }
 
@@ -133,7 +136,7 @@ img {
 	border: 2px solid #000000;
 	font-size: 1.6rem; 
 	font-weight: @bold;
-	line-height: 4.7rem; // 2.4rem;
+	line-height: 4.7rem;
 	text-transform: uppercase;
 }
 
@@ -180,6 +183,22 @@ img {
 
 .desktop::before {
 	content: '\f108';
+}
+
+.puzzle::before {
+	content: '\f12e';
+}
+
+.cloud::before {
+	content: '\f0ed';
+}
+
+.users::before {
+	content: '\f0c0';
+}
+
+.thumbs::before {
+	content: '\f164';
 }
 
 /* === GRID SYSTEM STYLES === */
@@ -262,7 +281,7 @@ img {
 /* === HERO SECTION STYLES === */
 .hero {
 	text-align: center;
-	background-color: #FCDB00;
+	background-color: @bg-color-yellow;
 	.container {
 		display: flex;
 		flex-direction: column;
@@ -279,14 +298,19 @@ img {
 		margin: 0 0 33px;
 	}
 	&-lead {
-		padding: 0 27.08333%;
 		margin-bottom: 45px;
+		@media @md {
+			padding: 0 27.08333%;
+		}
 	}
 	.btn {
-		width: 256px;
+		width: 220px;
 		height: 56px;
 		font-size: 2.2rem;
 		line-height: 5.6rem;
+		@media @sm {
+			width: 256px;
+		}
 	}
 	.scroll-down {
 		position: absolute;
@@ -521,6 +545,21 @@ img {
 		&-photo {
 			border-radius: 50%;
 		}
+		&-title {
+			margin-top: 44px;
+			margin-bottom: 14px;
+		}
+		&-job-title {
+			margin-top: 0;
+			font-size: 1.6rem;
+			line-height: 2rem;
+		}
+		&-lead {
+			padding: 0 10%;
+			font-size: 1.4rem;
+			line-height: 1.8rem;
+			color: @text-color-deep-blue;
+		}
 	}
 	.social-media {
 		font-size: 1.6rem;
@@ -531,7 +570,81 @@ img {
 	}
 }
 
-/* ===  === */
+/* === STATS SECTION STYLES === */
+.stats {
+	text-align: center;
+	&-lead {
+		padding: 0 18.33333%;
+		margin-bottom: 73px;
+	}
+	&-item {
+		margin-bottom: 50px;
+		font-size: 2.4rem;
+		font-weight: @bold;
+//		&:last-of-type {
+//			margin: 0;
+//		}
+		@media @md {
+			margin: 0;
+		}
+		&::before {
+			display: block;
+			margin-bottom: 25px;
+			font: 4.8rem @secondary-font-family;
+			color: @text-color-black-3;
+		}
+		&::after {
+			content: attr(data-stat);
+			display: block;
+			font-size: 1.4rem;
+			line-height: 1.6rem;
+			text-transform: capitalize;
+			color: @text-color-gray-1;
+		}
+	}
+	&-testimonial {
+		margin-top: 82px;
+		&-photo {
+			border-radius: 50%;
+		}
+		&-client::after {
+			content: attr(data-client);
+			display: block;
+			font-size: 1.6rem;
+			font-weight: normal;
+			line-height: 2rem;
+			text-transform: capitalize;
+			color: @text-color-gray-1;
+		}
+		&-text {
+			margin: 0;
+			margin-top: 36px;
+			position: relative;
+			quotes: '\f10d' '\f10e' '\2018' '\2019';
+			p {
+				padding: 0 17%;
+				margin: 0;
+			}
+			&::before,
+			&::after {
+				position: absolute;
+				font: 2rem/2.4rem @secondary-font-family;
+				color: @text-color-gray-1;
+			}
+			&::before {
+				content: open-quote;
+				top: 0;
+				left: 10.38961%;
+			}
+			&::after {
+				content: close-quote;
+				bottom: 0;
+				right: 10.38961%;
+			}
+		}
+	}
+}
+
 /* ===  === */
 /* ===  === */
 
