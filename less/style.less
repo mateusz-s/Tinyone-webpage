@@ -108,6 +108,10 @@ a {
 	color: @text-color-black-1;
 }
 
+address {
+	font-style: normal;
+}
+
 img {
 	display: block;
 	max-width: 100%;
@@ -259,34 +263,66 @@ img {
 	right: 0;
 	margin: 60px auto 0;
 	z-index: 999;
-	.page-nav {
-		position: relative;
-		&:hover .menu {
-			display: block;
-		}
-	}
-	.hamburger-btn {
-		font-size: 2.2rem;
-//		&:focus + .menu {
-//			display: block;
-//		}
-		.close-icon {
-			display: none;
-		}
-	}
-	.menu {
-		display: none;
-		position: absolute;
-		padding: 20px 0 0;
+	ul {
+		padding: 0;
 		margin: 0;
 		list-style-type: none;
 	}
+	.menu {
+		& > li:hover > ul {
+			display: block;
+			position: absolute;
+		}
+		& ul {
+			display: none;
+			padding-top: 20px;
+			a:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+	.hamburger-icon,
+	.close-icon {
+		font-size: 2.2rem;
+		&:hover {
+			cursor: pointer;
+		}
+	}
+	.close-icon {
+		display: none;
+	}
+//	.page-nav {
+//		position: relative;
+//		&:hover .menu {
+//			display: block;
+//		}
+//	}
+//	.hamburger-btn {
+//		font-size: 2.2rem;
+////		&:focus + .menu {
+////			display: block;
+////		}
+//		.close-icon {
+//			display: none;
+//		}
+//	}
+//	.menu {
+//		display: none;
+//		position: absolute;
+//		padding: 20px 0 0;
+//		margin: 0;
+//		list-style-type: none;
+//	}
 	.page-nav, .social-media {
-		flex: 1;
+		flex: 2;
 	}
 	.page-logo {
-		flex: 4;
+		flex: 3;
 		text-align: center;
+		img {
+			display: inline-block;
+			margin: 0;		
+		}
 	}
 	.social-media {
 		text-align: right;
@@ -302,7 +338,8 @@ img {
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		height: 80vh;
+		min-height: 80vh;
+		padding: 100px 15px;
 		position: relative;
 	}
 	&-title,
@@ -676,24 +713,10 @@ img {
 /* === CONTACT SECTION STYLES === */
 .contact {
 	text-align: center;
-	input, 
-	textarea {
-		width: 100%;
-		height: 55px;
-		padding: 15px;
-		border: 2px solid @text-color-black-4;
-		font: 1.6rem/2rem @primary-font-family;
-		color: @text-color-gray-1;
-	}
-	textarea {
-		height: 207px;
-		resize: none;
-	}
 	a, address {
 		font-size: 1.4rem;
 		line-height: 2.4rem;
 		color: @text-color-gray-1;
-		font-style: normal;
 	}
 	address {
 		line-height: 1.6rem;
@@ -733,6 +756,20 @@ img {
 		&-group {
 			margin-bottom: 25px;
 		}
+		&-email,
+		&-name,
+		&-message {
+			width: 100%;
+			height: 55px;
+			padding: 15px;
+			border: 2px solid @text-color-black-4;
+			font: 1.6rem/2rem @primary-font-family;
+			color: @text-color-gray-1;
+		}
+		&-message {
+			height: 207px;
+			resize: none;
+		}
 		&-btn {
 			width: 170px;
 			height: 51px;
@@ -749,11 +786,24 @@ img {
 /* === PAGE FOOTER STYLES === */
 .page-footer {
 	padding: 97px 0 280px;
+	text-align: center;
 	color: @text-color-white;
 	background-color: @bg-color-black-1;
-	&-title,
-	&-lead {
-		text-align: center;
+	ul {
+		padding: 0;
+		margin: 0;
+		list-style-type: none;
+	}
+	a, address {
+		font-size: 1.6rem;
+		line-height: 2rem;
+		color: @text-color-white;
+	}
+	a:hover {
+		text-decoration: underline;
+	}
+	address a {
+		display: block;
 	}
 	&-title {
 		color: @text-color-white;
@@ -766,7 +816,7 @@ img {
 	&-newsletter {
 		width: 100%;
 		max-width: 738px;
-		margin: 45px auto 0;
+		margin: 45px auto 115px;
 		font-size: 0;
 		&-email,
 		&-btn {
@@ -789,6 +839,21 @@ img {
 			vertical-align: top;
 			color: @text-color-black-1;
 			background-color: @bg-color-white;
+		}
+	}
+	&-item {
+		margin-bottom: 50px;
+		&:last-child {
+			margin-bottom: 0;
+		}
+		@media @sm {
+			&:nth-child(n + 4) {
+				margin-bottom: 0;
+			}
+		}
+		@media @md {
+			margin-bottom: 0;
+			text-align: left;
 		}
 	}
 }
