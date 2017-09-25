@@ -12,6 +12,7 @@
 <body>
 	<header class="page-header container"><!-- PAGE HEADER START -->
 		<nav class="page-nav">
+<!--
 			<button class="hamburger-btn">
 				<i class="fa fa-bars hamburger-icon" aria-hidden="true"></i>
 				<i class="fa fa-times close-icon" aria-hidden="true"></i>
@@ -23,11 +24,28 @@
 				<li><a href="#team">team</a></li>
 				<li><a href="#stats">testimonials</a></li>
 				<li><a href="#contact">contact</a></li>
+			</ul>	
+-->
+			<ul class="menu">
+				<li>
+					<i class="fa fa-bars hamburger-icon" aria-hidden="true"></i>
+					<i class="fa fa-times close-icon" aria-hidden="true"></i>
+					<ul>
+						<li><a href="#features">features</a></li>
+						<li><a href="#pricing">pricing</a></li>
+						<li><a href="#works">works</a></li>
+						<li><a href="#team">team</a></li>
+						<li><a href="#stats">testimonials</a></li>
+						<li><a href="#contact">contact</a></li>
+					</ul>
+				</li>
 			</ul>
 		</nav>
-		<a class="page-logo" href="#">
-			<img src="img/logo.png" alt="page logo">
-		</a>
+		<div class="page-logo">
+			<a href="#">
+				<img src="img/logo.png" alt="Page logo">
+			</a>
+		</div>
 		<ul class="social-media">
 			<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
 			<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
@@ -207,7 +225,7 @@
 				<div class="col-md-6 col-lg-3 team-item">
 					<img class="team-item-photo" src="img/team-1.jpg" alt="">
 					<h3 class="team-item-title">John Doe</h3>
-					<span class="team-item-job-title">UI Designer</span>
+					<div class="team-item-job-title">UI Designer</div>
 					<p class="team-item-lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
 					<ul class="social-media">
 						<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
@@ -218,7 +236,7 @@
 				<div class="col-md-6 col-lg-3 team-item">
 					<img class="team-item-photo" src="img/team-2.jpg" alt="">
 					<h3 class="team-item-title">John Doe</h3>
-					<span class="team-item-job-title">UI Designer</span>
+					<div class="team-item-job-title">UI Designer</div>
 					<p class="team-item-lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
 					<ul class="social-media">
 						<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
@@ -229,7 +247,7 @@
 				<div class="col-md-6 col-lg-3 team-item">
 					<img class="team-item-photo" src="img/team-3.jpg" alt="">
 					<h3 class="team-item-title">John Doe</h3>
-					<span class="team-item-job-title">UI Designer</span>
+					<div class="team-item-job-title">UI Designer</div>
 					<p class="team-item-lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
 					<ul class="social-media">
 						<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
@@ -240,7 +258,7 @@
 				<div class="col-md-6 col-lg-3 team-item">
 					<img class="team-item-photo" src="img/team-4.jpg" alt="">
 					<h3 class="team-item-title">John Doe</h3>
-					<span class="team-item-job-title">UI Designer</span>
+					<div class="team-item-job-title">UI Designer</div>
 					<p class="team-item-lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
 					<ul class="social-media">
 						<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
@@ -286,13 +304,13 @@
 			</div>
 			<form class="contact-form" action="">
 				<div class="contact-form-group">
-					<input type="text" placeholder="Email">
+					<input class="contact-form-email" type="email" placeholder="Email">
 				</div>
 				<div class="contact-form-group">
-					<input type="text" placeholder="Full name">
+					<input class="contact-form-name" type="text" placeholder="Full name">
 				</div>
 				<div class="contact-form-group">
-					<textarea name="" id="" placeholder="Message"></textarea>
+					<textarea class="contact-form-message" name="" id="" placeholder="Message"></textarea>
 				</div>
 				<button class="contact-form-btn" type="submit">Send message</button>
 			</form>
@@ -307,11 +325,42 @@
 				<button class="page-footer-newsletter-btn" type="submit">Submit</button>
 			</div>
 			<div class="row">
-				<div class="col-md-3"></div>
-				<div class="col-md-offset-1 col-md-1"></div>
-				<div class="col-md-offset-1 col-md-1"></div>
-				<div class="col-md-offset-1 col-md-1"></div>
-				<div class="col-md-offset-1 col-md-1"></div>
+				<div class="col-sm-12 col-md-3 page-footer-item">
+					<address>
+						HALOVIETNAM LTD<br>66, Dang Van ngu, Dong Da<br>Hanoi, Vietnam
+						<a href="mailto:contact@halovietnam.com">contact@halovietnam.com</a>
+						<a href="tel:+84435149182">+844 35149182</a>
+					</address>
+				</div>
+				<div class="col-sm-6 col-md-offset-1 col-md-1 page-footer-item">
+					<ul>
+						<li><a href="#">Examples</a></li>
+						<li><a href="#">Shop</a></li>
+						<li><a href="#">License</a></li>
+					</ul>
+				</div>
+				<div class="col-sm-6 col-md-offset-1 col-md-1 page-footer-item">
+					<ul>
+						<li><a href="#">Contact</a></li>
+						<li><a href="#">About</a></li>
+						<li><a href="#">Privacy</a></li>
+						<li><a href="#">Terms</a></li>
+					</ul>
+				</div>
+				<div class="col-sm-6 col-md-offset-1 col-md-1 page-footer-item">
+					<ul>
+						<li><a href="#">Download</a></li>
+						<li><a href="#">Support</a></li>
+						<li><a href="#">Documents</a></li>
+					</ul>
+				</div>
+				<div class="col-sm-6 col-md-offset-1 col-md-1 page-footer-item">
+					<ul>
+						<li><a href="#">Media</a></li>
+						<li><a href="#">Blog</a></li>
+						<li><a href="#">Forums</a></li>
+					</ul>
+				</div>
 			</div>
 		</div>
 	</footer><!-- PAGE FOOTER END -->
