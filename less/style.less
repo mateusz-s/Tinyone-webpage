@@ -35,6 +35,7 @@
 @bg-color-black-4: #000000;
 @bg-color-gray-2: #EBEBEB;
 @bg-color-yellow: #FCDB00;
+@bg-color-yellow-transparent: rgba(252, 219, 0, .95);
 
 //Other variables
 
@@ -256,26 +257,82 @@ img {
 /* === PAGE HEADER STYLES === */
 .page-header {
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-between;
 	align-items: center;
 	position: absolute;
 	left: 0;
 	right: 0;
-	margin: 60px auto 0;
+	margin: 30px auto 0;
 	z-index: 999;
+	@media @md {
+		margin-top: 60px;
+	}
 	ul {
+		display: inline-block;
 		padding: 0;
 		margin: 0;
 		list-style-type: none;
 	}
+	&-nav {
+		flex: 20%;
+		text-align: right;
+		@media @md {
+			flex: 30%;
+			text-align: left;
+		}
+	}
+	&-logo {
+		flex: 80%;
+		order: -1;
+		@media @md {
+			flex: 40%;
+			order: 0;
+			text-align: center;
+		}
+		img {
+			display: inline-block;
+			margin: 0;		
+		}
+	}
+	.social-media {
+		flex: 100%;
+		margin-top: 20px;
+		text-align: center;
+		@media @md {
+			flex: 30%;
+			margin: 0;
+			text-align: right;
+		}
+	}
 	.menu {
-		& > li:hover > ul {
-			display: block;
-			position: absolute;
+		& > li {
+			position: relative;
+			&:hover {
+				& > .hamburger-icon {
+					display: none;
+				}
+				& > .close-icon {
+					display: block;
+				}
+				& > ul {
+					display: block;
+					position: absolute;
+					right: 0;
+					@media @md {
+						right: auto;
+						left: 0;
+					}
+				}
+			}
 		}
 		& ul {
 			display: none;
-			padding-top: 20px;
+			padding: 20px 0 10px 10px;
+			background-color: @bg-color-yellow-transparent;
+			@media @md {
+				padding: 20px 10px 10px 0;
+			}
 			a:hover {
 				text-decoration: underline;
 			}
@@ -291,42 +348,6 @@ img {
 	.close-icon {
 		display: none;
 	}
-//	.page-nav {
-//		position: relative;
-//		&:hover .menu {
-//			display: block;
-//		}
-//	}
-//	.hamburger-btn {
-//		font-size: 2.2rem;
-////		&:focus + .menu {
-////			display: block;
-////		}
-//		.close-icon {
-//			display: none;
-//		}
-//	}
-//	.menu {
-//		display: none;
-//		position: absolute;
-//		padding: 20px 0 0;
-//		margin: 0;
-//		list-style-type: none;
-//	}
-	.page-nav, .social-media {
-		flex: 2;
-	}
-	.page-logo {
-		flex: 3;
-		text-align: center;
-		img {
-			display: inline-block;
-			margin: 0;		
-		}
-	}
-	.social-media {
-		text-align: right;
-	}
 }
 
 /* === HERO SECTION STYLES === */
@@ -339,8 +360,11 @@ img {
 		justify-content: center;
 		align-items: center;
 		min-height: 80vh;
-		padding: 100px 15px;
+		padding: 152px 15px 110px;
 		position: relative;
+		@media @md {
+			padding: 110px 15px;
+		}
 	}
 	&-title,
 	&-lead {
@@ -789,11 +813,6 @@ img {
 	text-align: center;
 	color: @text-color-white;
 	background-color: @bg-color-black-1;
-	ul {
-		padding: 0;
-		margin: 0;
-		list-style-type: none;
-	}
 	a, address {
 		font-size: 1.6rem;
 		line-height: 2rem;
@@ -840,6 +859,11 @@ img {
 			color: @text-color-black-1;
 			background-color: @bg-color-white;
 		}
+	}
+	&-nav {
+		padding: 0;
+		margin: 0;
+		list-style-type: none;
 	}
 	&-item {
 		margin-bottom: 50px;
