@@ -129,8 +129,20 @@ img {
 	li {
 		display: inline-block;
 		& + li {
-			margin-left: 20px;
+			margin-left: 10px;
 		}
+	}
+	a {
+		display: block;
+		width: 30px;
+		height: 30px;
+//		border: 2px solid transparent;
+		line-height: 30px;
+		text-align: center;
+//		transition: border-color .3s;
+//		&:hover {
+//			border-color: @text-color-black-1;
+//		}
 	}
 }
 
@@ -333,8 +345,11 @@ img {
 			@media @md {
 				padding: 20px 10px 10px 0;
 			}
-			a:hover {
-				text-decoration: underline;
+			a {
+				line-height: 2.6rem;
+				&:hover {
+					text-decoration: underline;
+				}
 			}
 		}
 	}
@@ -642,7 +657,15 @@ img {
 		font-size: 1.6rem;
 		line-height: 1.8rem;
 		li + li {
-			margin-left: 10px;
+			margin-left: 5px;
+		}
+		a {
+			border: 2px solid transparent;
+			line-height: 26px;
+			transition: border-color .3s;
+			&:hover {
+				border-color: @text-color-black-1;
+			}
 		}
 	}
 }

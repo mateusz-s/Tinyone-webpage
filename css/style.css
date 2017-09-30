@@ -67,7 +67,14 @@ img {
   display: inline-block;
 }
 .social-media li + li {
-  margin-left: 20px;
+  margin-left: 10px;
+}
+.social-media a {
+  display: block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
 }
 .btn {
   display: inline-block;
@@ -351,6 +358,9 @@ img {
   .page-header .menu ul {
     padding: 20px 10px 10px 0;
   }
+}
+.page-header .menu ul a {
+  line-height: 2.6rem;
 }
 .page-header .menu ul a:hover {
   text-decoration: underline;
@@ -683,7 +693,16 @@ img {
   line-height: 1.8rem;
 }
 .team .social-media li + li {
-  margin-left: 10px;
+  margin-left: 5px;
+}
+.team .social-media a {
+  border: 2px solid transparent;
+  line-height: 26px;
+  -webkit-transition: border-color 0.3s;
+  transition: border-color 0.3s;
+}
+.team .social-media a:hover {
+  border-color: #010101;
 }
 /* === STATS SECTION STYLES === */
 .stats {
