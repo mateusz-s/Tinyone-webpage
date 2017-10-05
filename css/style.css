@@ -487,6 +487,8 @@ img {
 }
 .pricing-item {
   margin-bottom: 93px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
 }
 .pricing-item:last-child {
   margin: 0;
@@ -507,6 +509,10 @@ img {
   background-color: #ebebeb;
   -webkit-transition: all .3s;
   transition: all .3s;
+}
+.pricing-item:hover {
+  -webkit-transform: translate(0, -20px);
+          transform: translate(0, -20px);
 }
 .pricing-item:hover::before {
   color: #ffffff;

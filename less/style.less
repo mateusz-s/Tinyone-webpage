@@ -465,6 +465,7 @@ img {
 	}
 	&-item {
 		margin-bottom: 93px;
+		transition: all .3s;
 		&:last-child {
 			margin: 0;
 		}
@@ -482,9 +483,12 @@ img {
 			background-color: @bg-color-gray-2;
 			transition: all .3s;
 		}
-		&:hover::before {
-			color: @text-color-white;
-			background-color: @bg-color-black-1;
+		&:hover {
+			transform: translate(0, -20px);
+			&::before {
+				color: @text-color-white;
+				background-color: @bg-color-black-1;
+			}
 		}
 		&-title {
 			font-size: 2.4rem;
